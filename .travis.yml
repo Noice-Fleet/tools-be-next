@@ -7,7 +7,9 @@ branchs:
     - master
 
 services:
-  - postgres
+  - postgresql
+  - elasticsearch
+  - redis-server
 
 node_js:
   - '12'
@@ -19,9 +21,15 @@ cache:
 install:
   - yarn install
 
+before_script:
+  - sleep 10
+
 script:
   - yarn test
   - yarn build
+
+scripts:
+  - yarn install codecov -g
 
 after_success:
   - yarn codecov
