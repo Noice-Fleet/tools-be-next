@@ -1,5 +1,5 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { UsersService } from '../../users.service'
 import { GetUsersQuery } from '../impl'
 import { User } from '../../entities/user.entity'

@@ -1,5 +1,5 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { RenewUserSessionCommand } from '../impl/renew-user-session.command'
 import { AuthService } from '../../auth.service'
 import { AuthModel } from '../../models/auth.model'

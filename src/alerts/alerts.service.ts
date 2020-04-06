@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { User } from '../users/entities/user.entity'
 
 @Injectable()

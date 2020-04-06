@@ -20,16 +20,15 @@
     "release:minor": "standard-version --release-as minor && yarn push",
     "release:patch": "standard-version --release-as patch && yarn push",
     "document": "npx compodoc -p tsconfig.json -s",
-    "lint": "eslint src --ext .ts,.tsx",
-    "test": "jest",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "lint:fix": "tslint -p tsconfig.json -c tslint.json --fix",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "codecov": "node_modules/.bin/codecov -t 9218c3e1-820e-49ba-987d-da3e0199d4dc"
+    "test:e2e": "jest  --verbose  --config ./test/e2e/jest-e2e.json",
+    "test": "jest --verbose --config ./test/jest.json"
   },
   "dependencies": {
-    "@compodoc/compodoc": "^1.1.11",
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/cqrs": "^6.1.0",
@@ -69,19 +68,10 @@
     "@types/jest": "25.1.4",
     "@types/node": "^13.9.1",
     "@types/supertest": "^2.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.26.0",
-    "@typescript-eslint/parser": "^2.26.0",
     "concurrently": "^5.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-airbnb-base": "^14.1.0",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jest": "^23.8.2",
-    "eslint-plugin-nestjs": "^1.2.3",
     "husky": "^4.2.3",
     "jest": "^25.2.7",
     "lint-staged": "^10.1.2",
-    "nodemon": "^2.0.2",
     "prettier": "^1.19.1",
     "standard-version": "^7.1.0",
     "supertest": "^4.0.2",
@@ -89,6 +79,7 @@
     "ts-loader": "^6.2.1",
     "ts-node": "^8.8.2",
     "tsconfig-paths": "^3.9.0",
+    "tslint": "^6.1.1",
     "typescript": "^3.7.4",
     "wait-on": "^4.0.1"
   },
@@ -103,5 +94,11 @@
       "yarn lint",
       "git add"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
   }
 }

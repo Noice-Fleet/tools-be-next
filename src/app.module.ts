@@ -15,6 +15,11 @@ const modules = [AlertsModule, AuthModule, RecipesModule, UsersModule]
       context: ({ req }) => ({ req }),
       installSubscriptionHandlers: true,
       autoSchemaFile: 'schema.gql',
+      playground: {
+        settings: {
+          'editor.theme': 'light',
+        },
+      },
     }),
     TypeOrmModule.forRootAsync({
       useClass: DatabaseConnectionService,
