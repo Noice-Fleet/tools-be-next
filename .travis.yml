@@ -1,6 +1,11 @@
 language: node_js
 
-sudo: true
+node_js:
+  - node
+
+cache:
+  directories:
+    - node_modules
 
 branchs:
   only:
@@ -11,22 +16,11 @@ services:
   - elasticsearch
   - redis-server
 
-node_js:
-  - '12'
-
-cache:
-  directories:
-    - node_modules
-
 install:
   - yarn install
 
 before_script:
   - sleep 10
-
-script:
-  - yarn test
-  - yarn build
 
 scripts:
   - yarn install codecov -g
