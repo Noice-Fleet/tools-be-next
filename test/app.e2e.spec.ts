@@ -1,22 +1,36 @@
-import { Test, TestingModule } from '@nestjs/testing'
+import { INestApplication } from '@nestjs/common'
+import { Test } from '@nestjs/testing'
 import * as request from 'supertest'
 import { ApplicationModule } from '../src/app.module'
 
 describe('AppController (e2e)', () => {
-  let app
+  let app: INestApplication
 
-  beforeEach(async () => {
-    const moduleFixture: TestingModule = await Test.createTestingModule({
+  beforeAll(async () => {
+    const moduleFixture = await Test.createTestingModule({
       imports: [ApplicationModule],
     }).compile()
 
     app = moduleFixture.createNestApplication()
+
     await app.init()
   })
 
-  it('/ (GET)', () => {
+  afterAll(async () => {
+    app.close()
+  })
+
+  it('/post /graphql', async () => {
     return request(app.getHttpServer())
-      .get('/')
-      .expect(404)
+      .post('/graphql')
+      .send({
+        query: `{
+          users {
+            id
+          }
+        }`,
+      })
+      .expect(200)
+      .expect('{"data":{"users":[{"id":"635ec400-2bba-4b86-8da8-e539286f19c6"}]}}\n')
   })
 })
