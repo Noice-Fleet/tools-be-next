@@ -1,5 +1,5 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { CreateUserCommand } from '../impl/create-user.command'
 import { UserModel } from '../../models/user.model'
 import { UsersService } from '../../users.service'

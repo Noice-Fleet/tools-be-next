@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { UserRenewedSessionEvent } from '../impl/user-renewed-session.event'
 
 @EventsHandler(UserRenewedSessionEvent)

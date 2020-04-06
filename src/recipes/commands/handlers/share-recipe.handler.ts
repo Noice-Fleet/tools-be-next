@@ -1,5 +1,5 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { RecipesService } from '../../recipes.service'
 import { ShareRecipeCommand } from '../impl/share-recipe.command'
 import { RecipeModel } from '../../models/recipe.model'

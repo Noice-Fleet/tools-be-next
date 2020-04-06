@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { UserLoggedInEvent } from '../impl/user-logged-in.event'
 
 @EventsHandler(UserLoggedInEvent)

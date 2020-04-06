@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ICommand, ofType, Saga } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 import { RecipePublishedAlertCommand } from '../../alerts/commands/impl/recipe-published-alert.command'

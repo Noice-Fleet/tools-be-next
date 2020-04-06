@@ -1,5 +1,5 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { ReviewsService } from '../../reviews.service'
 import { CreateReviewCommand } from '../impl/create-review.command'
 import { ReviewModel } from '../../models/review.model'

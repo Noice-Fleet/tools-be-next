@@ -1,5 +1,5 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { RecipesService } from '../../recipes.service'
 import { GetRecipeQuery } from '../impl'
 import { Recipe } from '../../entities/recipe.entity'

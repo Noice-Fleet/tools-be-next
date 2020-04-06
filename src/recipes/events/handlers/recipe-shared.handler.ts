@@ -1,6 +1,6 @@
 import { IEventHandler } from '@nestjs/cqrs'
 import { EventsHandler } from '@nestjs/cqrs/dist/decorators/events-handler.decorator'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { RecipeSharedEvent } from '../impl/recipe-shared.event'
 
 @EventsHandler(RecipeSharedEvent)

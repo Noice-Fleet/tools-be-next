@@ -1,5 +1,5 @@
 import { CommandHandler, EventPublisher, ICommandHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { AlertsService } from '../../alerts.service'
 import { RecipePublishedAlertCommand } from '../impl/recipe-published-alert.command'
 import { AlertModel } from '../../models/alert.model'

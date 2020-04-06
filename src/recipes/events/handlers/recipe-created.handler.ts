@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { RecipeCreatedEvent } from '../impl/recipe-created.event'
 
 @EventsHandler(RecipeCreatedEvent)

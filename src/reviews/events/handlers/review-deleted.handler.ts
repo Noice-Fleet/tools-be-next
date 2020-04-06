@@ -1,5 +1,5 @@
 import { EventsHandler, IEventHandler } from '@nestjs/cqrs'
-import clc from 'cli-color'
+import * as clc from 'cli-color'
 import { ReviewDeletedEvent } from '../impl/review-deleted.event'
 
 @EventsHandler(ReviewDeletedEvent)

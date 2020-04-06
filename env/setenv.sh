@@ -6,8 +6,8 @@
 
 echo "Creating .env file ..."
 tee -a .env << END
-API_BASE_URL=http://localhost:3000
-PORT=3000
+API_BASE_URL=http://localhost:3003
+PORT=3003
 JWT_SECRET=secret
 POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
