@@ -1,0 +1,7 @@
+# produtions
+dist/
+build/
+
+# test
+test/
+
