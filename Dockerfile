@@ -27,6 +27,6 @@ FROM node:10-alpine AS release
 WORKDIR /usr/src/app
 COPY --from=assets /usr/src/app/dist ./dist
 
-# Expose port 3003 and start app
-EXPOSE 3003
+# Expose port 4000 and start app
+EXPOSE 4000
 CMD [ "npm", "start" ]
